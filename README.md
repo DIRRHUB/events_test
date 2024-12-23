@@ -1,5 +1,5 @@
 
-
+APK: https://github.com/DIRRHUB/events_test/blob/main/app-release.apk
 
 https://github.com/user-attachments/assets/5770228c-6d29-4c61-80a4-77c90735f980
 
