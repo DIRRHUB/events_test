@@ -28,6 +28,8 @@ mixin _$SimpleEventModel {
   String get details => throw _privateConstructorUsedError;
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image')
+  String? get image => throw _privateConstructorUsedError;
   @JsonKey(name: 'date')
   String get date => throw _privateConstructorUsedError;
 
@@ -52,6 +54,7 @@ abstract class $SimpleEventModelCopyWith<$Res> {
       @JsonKey(name: 'title') String title,
       @JsonKey(name: 'details') String details,
       @JsonKey(name: 'address') String address,
+      @JsonKey(name: 'image') String? image,
       @JsonKey(name: 'date') String date});
 }
 
@@ -74,6 +77,7 @@ class _$SimpleEventModelCopyWithImpl<$Res, $Val extends SimpleEventModel>
     Object? title = null,
     Object? details = null,
     Object? address = null,
+    Object? image = freezed,
     Object? date = null,
   }) {
     return _then(_value.copyWith(
@@ -93,6 +97,10 @@ class _$SimpleEventModelCopyWithImpl<$Res, $Val extends SimpleEventModel>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -114,6 +122,7 @@ abstract class _$$SimpleEventModelImplCopyWith<$Res>
       @JsonKey(name: 'title') String title,
       @JsonKey(name: 'details') String details,
       @JsonKey(name: 'address') String address,
+      @JsonKey(name: 'image') String? image,
       @JsonKey(name: 'date') String date});
 }
 
@@ -134,6 +143,7 @@ class __$$SimpleEventModelImplCopyWithImpl<$Res>
     Object? title = null,
     Object? details = null,
     Object? address = null,
+    Object? image = freezed,
     Object? date = null,
   }) {
     return _then(_$SimpleEventModelImpl(
@@ -153,6 +163,10 @@ class __$$SimpleEventModelImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -169,6 +183,7 @@ class _$SimpleEventModelImpl implements _SimpleEventModel {
       @JsonKey(name: 'title') required this.title,
       @JsonKey(name: 'details') required this.details,
       @JsonKey(name: 'address') required this.address,
+      @JsonKey(name: 'image') required this.image,
       @JsonKey(name: 'date') required this.date});
 
   factory _$SimpleEventModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -187,12 +202,15 @@ class _$SimpleEventModelImpl implements _SimpleEventModel {
   @JsonKey(name: 'address')
   final String address;
   @override
+  @JsonKey(name: 'image')
+  final String? image;
+  @override
   @JsonKey(name: 'date')
   final String date;
 
   @override
   String toString() {
-    return 'SimpleEventModel(id: $id, title: $title, details: $details, address: $address, date: $date)';
+    return 'SimpleEventModel(id: $id, title: $title, details: $details, address: $address, image: $image, date: $date)';
   }
 
   @override
@@ -204,13 +222,14 @@ class _$SimpleEventModelImpl implements _SimpleEventModel {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.details, details) || other.details == details) &&
             (identical(other.address, address) || other.address == address) &&
+            (identical(other.image, image) || other.image == image) &&
             (identical(other.date, date) || other.date == date));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, title, details, address, date);
+      Object.hash(runtimeType, id, title, details, address, image, date);
 
   /// Create a copy of SimpleEventModel
   /// with the given fields replaced by the non-null parameter values.
@@ -235,6 +254,7 @@ abstract class _SimpleEventModel implements SimpleEventModel {
           @JsonKey(name: 'title') required final String title,
           @JsonKey(name: 'details') required final String details,
           @JsonKey(name: 'address') required final String address,
+          @JsonKey(name: 'image') required final String? image,
           @JsonKey(name: 'date') required final String date}) =
       _$SimpleEventModelImpl;
 
@@ -253,6 +273,9 @@ abstract class _SimpleEventModel implements SimpleEventModel {
   @override
   @JsonKey(name: 'address')
   String get address;
+  @override
+  @JsonKey(name: 'image')
+  String? get image;
   @override
   @JsonKey(name: 'date')
   String get date;

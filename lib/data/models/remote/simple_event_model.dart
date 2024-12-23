@@ -13,6 +13,7 @@ class SimpleEventModel with _$SimpleEventModel {
     @JsonKey(name: 'title') required String title,
     @JsonKey(name: 'details') required String details,
     @JsonKey(name: 'address') required String address,
+    @JsonKey(name: 'image') required String? image,
     @JsonKey(name: 'date') required String date,
   }) = _SimpleEventModel;
 

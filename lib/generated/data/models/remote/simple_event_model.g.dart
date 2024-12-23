@@ -13,6 +13,7 @@ _$SimpleEventModelImpl _$$SimpleEventModelImplFromJson(
       title: json['title'] as String,
       details: json['details'] as String,
       address: json['address'] as String,
+      image: json['image'] as String?,
       date: json['date'] as String,
     );
 
@@ -23,5 +24,6 @@ Map<String, dynamic> _$$SimpleEventModelImplToJson(
       'title': instance.title,
       'details': instance.details,
       'address': instance.address,
+      'image': instance.image,
       'date': instance.date,
     };

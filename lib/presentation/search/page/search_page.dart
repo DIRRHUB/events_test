@@ -1,3 +1,5 @@
+import 'package:events_test/core/services/global_message_service.dart';
+import 'package:events_test/domain/entities/enums/one_status.dart';
 import 'package:events_test/presentation/search/bloc/search_cubit.dart';
 import 'package:events_test/presentation/search/bloc/search_state.dart';
 import 'package:events_test/presentation/search/page/initial_search_page.dart';
@@ -12,9 +14,18 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const OneAppBar(title: 'Search'),
-      body: BlocBuilder<SearchCubit, SearchState>(
+      body: BlocConsumer<SearchCubit, SearchState>(
+        listener: (context, state) {
+          if (state.errorMessage.isNotEmpty) {
+            GlobalMessageService.show(context, state.errorMessage);
+          }
+        },
         builder: (context, state) {
-          return const InitialSearchPage();
+          if (state.status == OneStatus.loading) {
+            return const Center(child: CircularProgressIndicator());
+          } else {
+            return const InitialSearchPage();
+          }
         },
       ),
     );

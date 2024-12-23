@@ -44,7 +44,7 @@ class OneButton extends StatelessWidget {
             padding ?? const EdgeInsets.symmetric(horizontal: PaddingConstants.large, vertical: 0),
           ),
           backgroundColor: WidgetStateProperty.all(_getColor(context)),
-          overlayColor: WidgetStateProperty.all(backgroundColor ?? context.colorScheme.primary),
+          overlayColor: WidgetStateProperty.all(backgroundColor ?? context.colorScheme.secondary),
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: borderRadius ?? BorderRadius.circular(BorderRadiusConstants.extraLarge),
@@ -63,7 +63,7 @@ class OneButton extends StatelessWidget {
       text,
       style: textStyle ??
           theme.textTheme.bodySmall?.copyWith(
-            color: isEnabled ? theme.colorScheme.onPrimary : theme.colorScheme.onPrimary.withOpacity(0.75),
+            color: isEnabled ? theme.colorScheme.onSecondary : theme.colorScheme.onSecondary.withOpacity(0.75),
           ),
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
@@ -73,9 +73,9 @@ class OneButton extends StatelessWidget {
   Color? _getColor(BuildContext context) {
     final theme = Theme.of(context);
     if (isEnabled) {
-      return backgroundColor ?? theme.colorScheme.primary.withOpacity(.9);
+      return backgroundColor ?? theme.colorScheme.secondary.withOpacity(.9);
     } else {
-      return disabledColor ?? (backgroundColor?.withOpacity(0.7) ?? theme.colorScheme.primary.withOpacity(0.7));
+      return disabledColor ?? (backgroundColor?.withOpacity(0.7) ?? theme.colorScheme.secondary.withOpacity(0.7));
     }
   }
 }

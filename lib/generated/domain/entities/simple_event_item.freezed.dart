@@ -20,6 +20,7 @@ mixin _$SimpleEventItem {
   String get title => throw _privateConstructorUsedError;
   String get details => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
 
   /// Create a copy of SimpleEventItem
@@ -36,7 +37,12 @@ abstract class $SimpleEventItemCopyWith<$Res> {
       _$SimpleEventItemCopyWithImpl<$Res, SimpleEventItem>;
   @useResult
   $Res call(
-      {String id, String title, String details, String address, DateTime date});
+      {String id,
+      String title,
+      String details,
+      String address,
+      String image,
+      DateTime date});
 }
 
 /// @nodoc
@@ -58,6 +64,7 @@ class _$SimpleEventItemCopyWithImpl<$Res, $Val extends SimpleEventItem>
     Object? title = null,
     Object? details = null,
     Object? address = null,
+    Object? image = null,
     Object? date = null,
   }) {
     return _then(_value.copyWith(
@@ -77,6 +84,10 @@ class _$SimpleEventItemCopyWithImpl<$Res, $Val extends SimpleEventItem>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -94,7 +105,12 @@ abstract class _$$SimpleEventItemImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id, String title, String details, String address, DateTime date});
+      {String id,
+      String title,
+      String details,
+      String address,
+      String image,
+      DateTime date});
 }
 
 /// @nodoc
@@ -114,6 +130,7 @@ class __$$SimpleEventItemImplCopyWithImpl<$Res>
     Object? title = null,
     Object? details = null,
     Object? address = null,
+    Object? image = null,
     Object? date = null,
   }) {
     return _then(_$SimpleEventItemImpl(
@@ -133,6 +150,10 @@ class __$$SimpleEventItemImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -149,6 +170,7 @@ class _$SimpleEventItemImpl extends _SimpleEventItem {
       required this.title,
       required this.details,
       required this.address,
+      required this.image,
       required this.date})
       : super._();
 
@@ -161,11 +183,13 @@ class _$SimpleEventItemImpl extends _SimpleEventItem {
   @override
   final String address;
   @override
+  final String image;
+  @override
   final DateTime date;
 
   @override
   String toString() {
-    return 'SimpleEventItem(id: $id, title: $title, details: $details, address: $address, date: $date)';
+    return 'SimpleEventItem(id: $id, title: $title, details: $details, address: $address, image: $image, date: $date)';
   }
 
   @override
@@ -177,12 +201,13 @@ class _$SimpleEventItemImpl extends _SimpleEventItem {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.details, details) || other.details == details) &&
             (identical(other.address, address) || other.address == address) &&
+            (identical(other.image, image) || other.image == image) &&
             (identical(other.date, date) || other.date == date));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, title, details, address, date);
+      Object.hash(runtimeType, id, title, details, address, image, date);
 
   /// Create a copy of SimpleEventItem
   /// with the given fields replaced by the non-null parameter values.
@@ -200,6 +225,7 @@ abstract class _SimpleEventItem extends SimpleEventItem {
       required final String title,
       required final String details,
       required final String address,
+      required final String image,
       required final DateTime date}) = _$SimpleEventItemImpl;
   _SimpleEventItem._() : super._();
 
@@ -211,6 +237,8 @@ abstract class _SimpleEventItem extends SimpleEventItem {
   String get details;
   @override
   String get address;
+  @override
+  String get image;
   @override
   DateTime get date;
 

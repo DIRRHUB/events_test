@@ -14,7 +14,7 @@ class OneApp extends StatelessWidget {
     final router = serviceLocator<MainRouter>().router;
     return MaterialApp.router(
       builder: appBuilder,
-      title: 'WebSpark test',
+      title: 'Events task',
       themeMode: ThemeMode.dark,
       theme: GalleryOptionTheme.darkThemeData(context),
       routeInformationProvider: router.routeInformationProvider,
@@ -28,7 +28,7 @@ class OneApp extends StatelessWidget {
     return OKToast(
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => SearchCubit()),
+          BlocProvider(create: (context) => SearchCubit(serviceLocator(), serviceLocator())..init()),
         ],
         child: SafeArea(child: child ?? const SizedBox()),
       ),
